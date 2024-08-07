@@ -1,0 +1,17 @@
+service: demo-npm-astro
+image: gambala/demo-npm-astro
+servers:
+  - <%= ENV["MAIN_SERVER_IP"] %>
+labels:
+  traefik.http.routers.demo-npm-astro-web.rule: Host(`npm-astro.gambala.pro`)
+registry:
+  server: ghcr.io
+  username: gambala
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+healthcheck:
+  interval: 10s
+  path: /
+  cmd: ls -l > /dev/null
+builder:
+  multiarch: false
