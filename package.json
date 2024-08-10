@@ -1,5 +1,5 @@
 {
-  "name": "demo-npm-astro",
+  "name": "demo-npm-astro-fastify",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -12,7 +12,10 @@
   "dependencies": {
     "@astrojs/check": "^0.9.2",
     "@astrojs/node": "^8.3.2",
+    "@fastify/middie": "^8.3.1",
+    "@fastify/static": "^7.0.4",
     "astro": "^4.13.1",
+    "fastify": "^4.28.1",
     "typescript": "^5.5.4"
   }
 }

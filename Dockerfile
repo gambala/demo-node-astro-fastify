@@ -18,11 +18,12 @@ RUN npm run build
 FROM base AS runtime
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
+COPY run-server.mjs ./
 
 # Install curl for Kamal health checks and bash for shell access
 RUN apk add --no-cache curl bash
 
-ENV HOST=0.0.0.0
+ENV ADDRESS=0.0.0.0
 ENV PORT=4321
 EXPOSE 4321
-CMD node ./dist/server/entry.mjs
+CMD node ./run-server.mjs
