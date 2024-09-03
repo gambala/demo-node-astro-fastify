@@ -1,9 +1,9 @@
-service: demo-npm-astro-fastify
-image: gambala/demo-npm-astro-fastify
+service: demo-node-astro-fastify
+image: gambala/demo-node-astro-fastify
 servers:
   - <%= ENV["MAIN_SERVER_IP"] %>
 labels:
-  traefik.http.routers.demo-npm-astro-fastify-web.rule: Host(`npm-astro-fastify.gambala.pro`)
+  traefik.http.routers.demo-node-astro-fastify-web.rule: Host(`node-astro-fastify.gambala.pro`)
 registry:
   server: ghcr.io
   username: gambala
